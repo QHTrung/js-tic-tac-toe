@@ -4,6 +4,7 @@ import {
   getCurrentTurnElement,
   getGameStatusElement,
   getReplayButtonElement,
+  getCellListElement,
 } from './selectors.js';
 
 import { TURN, CELL_VALUE, GAME_STATUS } from './constants.js';
@@ -128,10 +129,21 @@ function initReplayButton() {
   }
 }
 function initCellElementList() {
-  const cellElementList = getCellElementList();
-  cellElementList.forEach((cell, index) => {
-    cell.addEventListener('click', () => handleCellClick(cell, index));
+  // set index for each li element
+  const liElement = getCellElementList();
+  liElement.forEach((cell, index) => {
+    cell.dataset.idx = index;
+    // cell.addEventListener('click', () => handleCellClick(cell, index));
   });
+  // attach event click for ul element
+  const ulElement = getCellListElement();
+  if (ulElement) {
+    ulElement.addEventListener('click', (event) => {
+      if (event.target.tagName !== 'LI') return;
+      const index = Number.parseInt(event.target.dataset.idx);
+      handleCellClick(event.target, index);
+    });
+  }
 }
 (() => {
   initCellElementList();

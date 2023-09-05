@@ -6,6 +6,7 @@ import {
 } from './selectors.js';
 
 import { TURN } from './constants.js';
+import { checkGameStatus } from './utils.js';
 /**
  * Global variables
  */

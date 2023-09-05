@@ -6,7 +6,7 @@
 
 body {
   font-size: 16px;
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 
 ul {
@@ -22,7 +22,18 @@ ul {
 
   padding: 1rem;
   min-height: 100vh;
-  background: darkgreen;
+  /* background: darkgreen; */
+  background: #11998e; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #38ef7d,
+    #11998e
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #38ef7d,
+    #11998e
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 .game {
@@ -119,13 +130,13 @@ ul {
 
 .game .board-cells-list > li.cross::before,
 .game .game-details .current-turn .cross::before {
-  content: "X";
+  content: 'X';
   color: lightgreen;
 }
 
 .game .board-cells-list > li.circle::before,
 .game .game-details .current-turn .circle::before {
-  content: "O";
+  content: 'O';
   color: red;
 }
 

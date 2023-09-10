@@ -72,7 +72,7 @@ export function checkGameStatus(cellValues) {
     };
   }
   // end + playing
-  const isEndGame = cellValues.filter((x) => x !== '').length === 0;
+  const isEndGame = cellValues.filter((x) => x === '').length === 0;
   return {
     status: isEndGame ? GAME_STATUS.ENDED : GAME_STATUS.PLAYING,
     winPositions: [],

@@ -17,6 +17,7 @@ let gameStatus = GAME_STATUS.PLAYING;
 let isGameEnded = false;
 let cellValues = new Array(9).fill('');
 
+console.log(checkGameStatus(['X', 'O', 'X', 'X', 'O', 'X', 'O', 'X', 'O']));
 /**
  * TODOs
  *
